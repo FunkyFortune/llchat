@@ -51,10 +51,14 @@ services:
         volumes:
             - ./draupnir_data:/data
             - ./draupnir.yml:/data/config/production.yaml
+        networks:
+            - draupnir
 
 volumes:
     db:
 
 networks:
     caddy:
+        external: true
+    draupnir:
         external: true
