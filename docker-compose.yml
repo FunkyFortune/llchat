@@ -44,6 +44,13 @@ services:
         labels:
             caddy: chat.luddlog.com
             caddy.reverse_proxy: "{{upstreams 6167}}"
+    draupnir:
+        image: gnuxie/draupnir:latest
+        command: ["bot", "--draupnir-config", "/data/config/production.yaml"]
+        restart: unless-stopped
+        volumes:
+            - ./draupnir_data:/data
+            - ./draupnir.yml:/data/config/production.yaml
 
 volumes:
     db:
