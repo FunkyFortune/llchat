@@ -1838,25 +1838,25 @@ address = "0.0.0.0"
 #
 #blurhash_max_raw_size = 33554432
 
-#[global.ldap]
+[global.ldap]
 
 # Whether to enable LDAP login.
 #
 # example: "true"
 #
-#enable = false
+enable = true
 
 # URI of the LDAP server.
 #
 # example: "ldap://ldap.example.com:389"
 #
-#uri =
+uri = "ldap://ldap:3890"
 
 # Root of the searches.
 #
 # example: "ou=users,dc=example,dc=org"
 #
-#base_dn =
+base_dn = "dc=luddlog,dc=com"
 
 # Bind DN if anonymous search is not enabled.
 #
@@ -1891,7 +1891,7 @@ address = "0.0.0.0"
 #
 # example: "uid" or "cn"
 #
-#uid_attribute = "uid"
+uid_attribute = "uuid"
 
 # Attribute containing the mail of the user.
 #
