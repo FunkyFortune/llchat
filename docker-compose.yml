@@ -55,23 +55,19 @@ services:
             - draupnir
     ldap:
         image: lldap/lldap:stable
-        ports:
-            # for LDAP
-          - "3890:3890"
-          - "17170:17170"
         volumes:
-          - "./ldap_data:/data"
+            - "./ldap_data:/data"
         environment:
-          UID: 1000
-          GID: 1000
-          LLDAP_JWT_SECRET: ""
-          LLDAP_KEY_SEED: ""
-          LLDAP_LDAP_BASE_DN: dc=luddlog,dc=com
-          LLDAP_LDAP_USER_PASS:
+            UID: 1000
+            GID: 1000
+            LLDAP_JWT_SECRET: ""
+            LLDAP_KEY_SEED: ""
+            LLDAP_LDAP_BASE_DN: dc=luddlog,dc=com
+            LLDAP_LDAP_USER_PASS:
         networks:
           - caddy
         labels:
-           caddy: ldap.luddlog.com
+           caddy: alt.luddlog.com
            caddy.reverse_proxy: "{{upstreams 17170}}
 
 volumes:

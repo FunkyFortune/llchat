@@ -1869,7 +1869,7 @@ base_dn = "dc=luddlog,dc=com"
 # example: "cn=ldap-reader,dc=example,dc=org" or
 # "cn={username},ou=users,dc=example,dc=org"
 #
-#bind_dn = ""
+bind_dn = "cn={username},ou=people,dc=luddlog,dc=com"
 
 # Path to a file on the system that contains the password for the
 # `bind_dn`.
