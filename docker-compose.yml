@@ -70,6 +70,9 @@ services:
           LLDAP_LDAP_USER_PASS:
         networks:
           - caddy
+        labels:
+           caddy: ldap.luddlog.com
+           caddy.reverse_proxy: "{{upstreams 17170}}
 
 volumes:
     db:
